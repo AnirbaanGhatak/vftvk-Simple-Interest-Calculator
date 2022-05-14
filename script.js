@@ -18,7 +18,7 @@ function compute() {
 
     // console.log(yr);
 
-    document.getElementById('ci').innerHTML = `If you deposit ${p},<br/> at an interest rate of ${r}.<br/> You will recieve an amount of ${ans},<br/> in the year ${yr}`;
+    document.getElementById('ci').innerHTML = `If you deposit ${p},<br/> at an interest rate of ${r}%.<br/> You will recieve an amount of ${ans},<br/> in the year ${yr}`;
 
 }
 
