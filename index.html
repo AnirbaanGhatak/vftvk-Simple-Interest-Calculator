@@ -1,16 +1,84 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simple Interest Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Simple Interest Calculator</h1>
+    <div style="display: inline-block; margin-left: 30px">
+      <div class="fn" id="f_labels">
+        <label class="fnip">Amount</label>
+        <label class="fnip">Interest Rate</label>
+        <label class="fnip">No. of Years</label>
+      </div>
+
+      <div class="fn" id="f_inputs">
+        <input
+          class="fnip inps"
+          title="amt"
+          type="text"
+          id="principal"
+          style="margin-bottom: 22px"
+        />
+        <div class="fnip">
+          <input
+            title="int_rate"
+            type="range"
+            id="rate"
+            min="0.00"
+            max="10.00"
+            style="margin-bottom: 21px"
+            step="0.5"
+            onchange="rangeInp(this.value);"
+          />
+          <span id="rval"></span>
+        </div>
+
+        <input
+          class="fnip inps"
+          title="yrs"
+          type="text"
+          id="years"
+          list="nof"
+          style="margin-top: 0px; width: 50px"
+          min="0"
+          max="10"
+        />
+        <datalist id="nof">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+        </datalist>
+      </div>
+    </div>
+    <br />
+
+    <button
+      onclick="compute()"
+      style="
+        margin: 10px 0px 0px 30px;
+        border-radius: 3px;
+        border: 1px solid black;
+      "
+    >
+      Compute Interest
+    </button>
+    <br />
+    <p id="ci"></p>
+    <br />
+
+    &copy<span>Everyone Can Get Rich</span>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
-    </body>
+  </body>
 </html>
