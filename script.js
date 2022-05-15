@@ -1,28 +1,23 @@
-var p
-var r
-var t
-var ans
+var p;
+var r;
+var t;
+var ans;
 
 function compute() {
     p = document.getElementById("principal").value;
     r = document.getElementById('rate').value;
     t = document.getElementById('years').value;
 
-    if (p == " " || p == "0" || parseInt(p) < 0) {
+    if (p == "" || p == "0" || parseInt(p) < 0 || p.match(/[a-z]/i)) {
+
         alert("Please Enter a Positive number");
+        document.getElementById('principal').focus();
     } else {
-
-
-
-        console.log(typeof (p) + "  " + typeof (r));
 
         let yr = new Date().getFullYear().toString();
         yr = (parseInt(yr) + parseInt(t)).toString();
 
         ans = ((p * r * t) / 100);
-
-
-        // console.log(yr);
 
         document.getElementById('ci').innerHTML = `If you deposit <mark>${p}</mark>,<br/> at an interest rate of <mark>${r}%</mark>.<br/> You will recieve an amount of <mark>${ans}</mark>,<br/> in the year <mark>${yr}</mark>`;
     }
